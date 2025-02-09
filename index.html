@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">İsmail Efe Döşdemir | Portfolyo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <header class="py-5 text-center text-3xl font-bold" id="header-title">İsmail Efe Döşdemir</header>
+    <div class="text-center my-5">
+        <button onclick="switchLanguage('tr')" class="mx-2 px-4 py-2 bg-blue-500 rounded">TR</button>
+        <button onclick="switchLanguage('en')" class="mx-2 px-4 py-2 bg-green-500 rounded">EN</button>
+    </div>
+
+    <main class="max-w-5xl mx-auto p-5">
+        <section id="about" class="text-center my-10">
+            <h2 class="text-2xl font-semibold" id="about-title">Hakkımda</h2>
+            <p id="about-text" class="text-gray-300 mt-2">Düzce Üniversitesi Bilgisayar Mühendisliği mezunuyum ve yüksek
+                lisans yapıyorum. Aynı zamanda Elektrik-Elektronik Mühendisliği alanında çift anadal yapıyorum. Yapay
+                zeka, görüntü işleme ve otonom sistemler konularında projeler geliştirdim.</p>
+        </section>
+
+        <section id="experience" class="my-10">
+            <h2 id="experience-title" class="text-2xl font-semibold">Deneyim</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div id="nurol-teknoloji" class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <h3 id="nurol-teknoloji-title" class="font-semibold text-lg">Nurol Teknoloji</h3>
+                    <p id="nurol-teknoloji-role" class="text-gray-400">Proje Çalışanı (Temmuz 2023 – Aralık 2023)</p>
+                    <ul id="nurol-teknoloji-tasks" class="text-gray-300 mt-2 list-disc pl-5">
+                        <li id="nurol-teknoloji-tasks-1">Savunma sektöründe karbon azaltma teknolojileri ve
+                            Sürdürülebilir Kalkınma Hedefleri (SDG) üzerine çalıştım.</li>
+                        <li id="nurol-teknoloji-tasks-2">Savunma sanayine sürdürülebilir finans modellerini entegre
+                            etmek için finansal analizler gerçekleştirdim.</li>
+                    </ul>
+                </div>
+                <div id="sonel-yazilim" class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <h3 id="sonel-yazilim-title" class="font-semibold text-lg">Sonel Yazılım</h3>
+                    <p id="sonel-yazilim-role" class="text-gray-400">Yazılım Stajyeri (Temmuz 2023 – Ekim 2023)</p>
+                    <ul id="sonel-yazilim-tasks" class="text-gray-300 mt-2 list-disc pl-5">
+                        <li id="sonel-yazilim-tasks-1">Otonom yapay zeka destekli robot kol projesinde yer aldım.</li>
+                        <li id="sonel-yazilim-tasks-2">Görüntü işleme ve yapay zeka modeli eğitimi üzerine çalışmalar
+                            yaptım.</li>
+                        <li id="sonel-yazilim-tasks-3">Plastik enjeksiyon makinesinden çıkan parçaların kalite
+                            kontrolünü sağlayan robot yazılımı geliştirdim.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="projects" class="my-10">
+            <h2 id="projects-title" class="text-2xl font-semibold">Projeler</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Proje 1 -->
+                <div id="project-1" class="p-5 bg-gray-800 rounded-lg shadow-lg cursor-pointer project-card"
+                    onclick="openModal(0)">
+                    <h3 id="project-1-title" class="font-semibold text-lg">İHA Yer Kontrol İstasyonu</h3>
+                    <p id="project-1-description" class="text-gray-400">Detaylar için tıklayın.</p>
+                </div>
+
+                <!-- Proje 2 -->
+                <div id="project-2" class="p-5 bg-gray-800 rounded-lg shadow-lg cursor-pointer project-card"
+                    onclick="openModal(1)">
+                    <h3 id="project-2-title" class="font-semibold text-lg">TÜBİTAK 2209-A Projesi</h3>
+                    <p id="project-2-description" class="text-gray-400">Detaylar için tıklayın.</p>
+                </div>
+
+                <!-- Proje 3 -->
+                <div id="project-3" class="p-5 bg-gray-800 rounded-lg shadow-lg cursor-pointer project-card"
+                    onclick="openModal(2)">
+                    <h3 id="project-3-title" class="font-semibold text-lg">Uluslararası İHA Yarışması – Döner Kanat</h3>
+                    <p id="project-3-description" class="text-gray-400">Detaylar için tıklayın.</p>
+                </div>
+
+                <!-- Proje 4 -->
+                <div id="project-4" class="p-5 bg-gray-800 rounded-lg shadow-lg cursor-pointer project-card"
+                    onclick="openModal(3)">
+                    <h3 id="project-4-title" class="font-semibold text-lg">Savaşan İHA Yarışması</h3>
+                    <p id="project-4-description" class="text-gray-400">Detaylar için tıklayın.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Modal Pencere -->
+        <div id="projectModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h3 id="modal-title" class="font-semibold text-xl"></h3>
+                <p id="modal-description" class="text-gray-300 mt-3"></p>
+                <div id="modal-images"></div>
+            </div>
+        </div>
+
+        <style>
+            /* Modal pencere stilleri */
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0s 0.3s;
+            }
+
+            .modal-content {
+                background-color: #333;
+                padding: 20px;
+                border-radius: 8px;
+                width: 80%;
+                max-width: 600px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+                color: white;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+            }
+
+            /* Modal görünür hale geldiğinde */
+            .modal.show {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.3s ease, visibility 0s 0s;
+            }
+
+            /* Görseller için stil */
+            #modal-images img {
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+                border-radius: 8px;
+            }
+        </style>
+
+        <script>
+            // Proje verilerini nesnede saklama
+            const projects = [
+                {
+                    title: "İHA Yer Kontrol İstasyonu",
+                    description: `
+            <strong>Tarih:</strong> 2024<br>
+            <strong><br>Açıklama:</strong> Bu projede, insansız hava araçları (İHA) için kapsamlı bir yer kontrol uygulaması geliştirdim. Uygulama, C++ ve Qt kullanılarak geliştirilmiş olup, İHA'ların yerden kontrol edilmesini ve uçuş verilerinin gerçek zamanlı olarak izlenmesini sağladı. Telemetri verileri RFD900+ modülü aracılığıyla alındı ve MavSDK kullanarak İHA ile iletişim kuruldu.<br>
+            <br><strong>Özellikler:</strong><br>
+            <ul>
+                <li><strong>-> Veri Görselleştirme:</strong> İHA'dan gelen GPS verileri, telemetri bilgileri ve uçuş istatistikleri gerçek zamanlı olarak görselleştirildi. Bu bilgiler harita üzerinde anlık olarak gösterildi.</li>
+                <li><strong>-> Komut Gönderme:</strong> Kullanıcıların İHA'lara yerden komut göndermesine olanak tanıyan bir arayüz sağlandı. Bu komutlar arasında uçuş planlaması, rota değişiklikleri ve görev talimatları yer aldı.</li>
+                <li><strong>-> Uçuş Durumu İzleme:</strong> İHA'nın mevcut konumu, hız, irtifa ve diğer parametreleri sürekli olarak izlenip güncellendi. Ayrıca, uçuşun sağlık durumu ve sistem uyarıları hakkında bilgi verildi.</li>
+            </ul><br>
+        `,
+                    images: [
+                        "assets/images/GCS_1.png",
+                        "assets/images/GCS_2.png",
+                    ]
+                },
+                {
+                    title: "TÜBİTAK 2209-A Projesi",
+                    description: `
+            <strong>Tarih:</strong> 2024<br>
+            <strong><br>Açıklama:</strong> TÜBİTAK tarafından desteklenen bu projede, İHA’lar aracılığıyla görüntü işleme teknolojileri kullanılarak bitki örtüsü hasar tespiti ve erozyon riski belirleme işlemlerini otomatize ettim. OpenCV ve YOLO algoritmaları kullanarak arazi sınıflandırma ve model eğitimi gerçekleştirdim. Gazebo simülasyonu üzerinde otonom görev testlerini yaptım.<br>
+            <strong><br>Sonuçlar:</strong> Proje başarıyla tamamlanarak simülasyon ortamında test edildi. Bitki örtüsü hasarı tespitinde yaklaşık %70'lik doğruluk elde edildi.<br>
+            <strong><br>Kullanılan Teknolojiler:</strong> <p>OpenCV, YOLO, Gazebo, Python</p> <br> `,
+                    images: [
+                        "assets/images/gazebo_2209.png",
+                        "assets/images/label_2209.png",
+                        "assets/images/result_2209.png",
+                    ]
+                },
+                {
+                    title: "Uluslararası İHA Yarışması – Döner Kanat",
+                    description: `
+            <strong>Tarih:</strong> 2021 - 2024<br>
+            <strong><br>Açıklama:</strong> <p>4 kez katıldığım bu yarışmalarda, döner kanatlı İHA'nın hem otonom uçuş sistemleri ve nesne tespiti algoritmalarının geliştirilmesi hem de elektronik montaj ve malzeme seçimi süreçlerinde aktif rol aldım. Projelerde, İHA'nın görev esnasında otonom karar verme yeteneklerini artırmak için görüntü işleme algoritmaları ve sensör entegrasyonu üzerinde çalıştım. Ayrıca, elektronik bileşenlerin montajı ve uygun malzemelerin seçimi konularında görev alarak İHA'nın uçuş stabilitesini ve performansını optimize ettim.</p><br>
+        `,
+                    images: [
+                        "assets/images/uav_1.png",
+                        "assets/images/uav_2.png",
+                        "assets/images/uav_4.png",
+                    ]
+                },
+                {
+                    title: "Savaşan İHA Yarışması – Sabit Kanat İHA",
+                    description: `
+            <strong>Tarih:</strong> 2022 - 2024<br>
+            <strong><br>Açıklama:</strong> <p>Katıldığım Savaşan İHA yarışmalarında sabit kanat İHA üretimi konusunda hem mekanik ve elektronik hem de yazılım alanında aktif olarak rol aldım. Yazılım konusunda İHA’nın hedef İHA’yı tespiti için kullanacağı YOLO algoritması ile veri setleri eğittim ve bu sayede tespiti yaparak hedefe otonom olarak yönelip takip etmesi için gerekli yazılımı yaptım. Tüm bu işlemler İHA üzerindeki Nvidia TX2 yapay zeka kartı üzerinde ve tam otonom bir şekilde gerçekleşti.</p><br>
+        `,
+                    images: [
+                        "assets/images/gazebo.png",
+                        "assets/images/labels_1.png",
+                        "assets/images/uav_6.png",
+                        "assets/images/uav_7.png",
+                    ]
+                }
+            ];
+
+            function openModal(projectIndex) {
+                var modal = document.getElementById("projectModal");
+                var modalTitle = document.getElementById("modal-title");
+                var modalDescription = document.getElementById("modal-description");
+                var modalImages = document.getElementById("modal-images");
+
+                const project = projects[projectIndex];
+
+                modalTitle.textContent = project.title;
+                // description içine HTML ekliyoruz
+                modalDescription.innerHTML = project.description;
+
+                modalImages.innerHTML = '';
+                project.images.forEach(imageUrl => {
+                    const img = document.createElement('img');
+                    img.src = imageUrl;
+                    img.alt = "Project Image";
+                    img.style.maxWidth = '100%';   // Resmin genişliği %50 olacak
+                    img.style.height = 'auto';    // Oranları koruyarak ölçekleme
+                    img.style.margin = '0 auto 20px';  // Üst-alta boşluk, yatayda ortalama
+                    img.style.display = 'block';  // Blok eleman yaparak margin:auto çalıştır
+                    modalImages.appendChild(img);
+                });
+
+                modal.classList.add("show");
+            }
+
+            // Modal'ı kapama fonksiyonu
+            function closeModal() {
+                var modal = document.getElementById("projectModal");
+                modal.classList.remove("show");
+            }
+
+            // Modal dışına tıklanarak kapatılmasını sağlama
+            window.onclick = function (event) {
+                var modal = document.getElementById("projectModal");
+                if (event.target === modal) {
+                    closeModal();
+                }
+            }
+        </script>
+
+
+
+        <section id="skills" class="my-10">
+            <h2 class="text-2xl font-semibold" id="skills-title">Teknik Beceriler</h2>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>Python</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>C++</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>C#</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>Kotlin</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>Yolo</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>Opencv</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>Cuda</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>Qt</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-800 rounded-lg shadow-lg">
+                    <p>Linux</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="contact" class="my-10">
+            <h2 id="contact-title" class="text-2xl font-semibold">İletişim</h2>
+            <div class="mt-6">
+                <p id="contact-text" class="text-gray-400">Bana ulaşmak için aşağıdaki platformları kullanabilirsiniz:
+                </p>
+                <ul class="mt-4 space-y-4">
+                    <li>
+                        <strong id="email-label">E-posta:</strong>
+                        <a href="mailto:ismaildsdm@gmail.com" class="text-blue-400 hover:underline"
+                            id="email-link">ismaildsdm@gmail.com</a>
+                    </li>
+                    <li>
+                        <strong id="linkedin-label">LinkedIn:</strong>
+                        <a href="https://tr.linkedin.com/in/ismail-efe-dosdemir" target="_blank"
+                            class="text-blue-400 hover:underline" id="linkedin-link">linkedin.com/in/ismail-efe-dosdemir</a>
+                    </li>
+                    <li>
+                        <strong id="github-label">GitHub:</strong>
+                        <a href="https://github.com/ismaildosdemir" target="_blank" class="text-blue-400 hover:underline"
+                            id="github-link">github.com/ismaildosdemir</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+
+
+    </main>
+
+
+</body>
+
+</html>
+
+
+
+<style>
+    .modal-content {
+        max-height: 97vh;
+        overflow-y: auto;
+        padding: 20px;
+    }
+</style>
+
+
+
+<script>
+    function switchLanguage(lang) {
+        const translations = {
+            "tr": {
+                "page-title": "İsmail Efe Döşdemir | Portfolyo",
+                "header-title": "İsmail Efe Döşdemir",
+                "about-title": "Hakkımda",
+                "about-text": "Bilgisayar Mühendisliği yüksek lisans öğrencisiyim. Görüntü işleme, yapay zeka ve otonom sistemler üzerine çalışıyorum. Savunma sanayisinde yer alan projelerde deneyim kazandım ve sürekli kendimi geliştirmeye odaklanıyorum.",
+                "skills-title": "Teknik Beceriler",
+                "projects-title": "Projeler",
+                "experience-title": "Deneyim",
+                "nurol-teknoloji-title": "Nurol Teknoloji",
+                "nurol-teknoloji-role": "Proje Çalışanı (Temmuz 2023 – Aralık 2023)",
+                "nurol-teknoloji-tasks-1": "Savunma sektöründe karbon azaltma teknolojileri ve Sürdürülebilir Kalkınma Hedefleri (SDG) üzerine çalıştım.",
+                "nurol-teknoloji-tasks-2": "Savunma sanayine sürdürülebilir finans modellerini entegre etmek için finansal analizler gerçekleştirdim.",
+                "sonel-yazilim-title": "Sonel Yazılım",
+                "sonel-yazilim-role": "Yazılım Stajyeri (Temmuz 2023 – Ekim 2023)",
+                "sonel-yazilim-tasks-1": "Otonom yapay zeka destekli robot kol projesinde yer aldım.",
+                "sonel-yazilim-tasks-2": "Görüntü işleme ve yapay zeka modeli eğitimi üzerine çalışmalar yaptım.",
+                "sonel-yazilim-tasks-3": "Plastik enjeksiyon makinesinden çıkan parçaların kalite kontrolünü sağlayan robot yazılımı geliştirdim.",
+                "project-1-title": "İHA Yer Kontrol İstasyonu",
+                "project-1-description": "Detaylar için tıklayın.",
+                "project-2-title": "TÜBİTAK 2209-A Projesi",
+                "project-2-description": "Detaylar için tıklayın.",
+                "project-3-title": "Uluslararası İHA Yarışması – Döner Kanat",
+                "project-3-description": "Detaylar için tıklayın.",
+                "project-4-title": "Savaşan İHA Yarışması",
+                "project-4-description": "Detaylar için tıklayın.",
+                "contact-title": "İletişim",
+                "contact-text": "Bana ulaşmak için aşağıdaki platformları kullanabilirsiniz:",
+                "email-label": "E-posta:",
+            },
+            "en": {
+                "page-title": "İsmail Efe Döşdemir | Portfolio",
+                "header-title": "İsmail Efe Döşdemir",
+                "about-title": "About Me",
+                "about-text": "I am a graduate student in Computer Engineering. I specialize in image processing, artificial intelligence, and autonomous systems. I have experience in defense industry projects and I am focused on continuous self-improvement.",
+                "skills-title": "Technical Skills",
+                "projects-title": "Projects",
+                "experience-title": "Experience",
+                "nurol-teknoloji-title": "Nurol Teknoloji",
+                "nurol-teknoloji-role": "Project Employee (July 2023 – December 2023)",
+                "nurol-teknoloji-tasks-1": "Worked on carbon reduction technologies and Sustainable Development Goals (SDG) in the defense sector.",
+                "nurol-teknoloji-tasks-2": "Conducted financial analyses to integrate sustainable finance models into the defense industry.",
+                "sonel-yazilim-title": "Sonel Yazılım",
+                "sonel-yazilim-role": "Software Intern (July 2023 – October 2023)",
+                "sonel-yazilim-tasks-1": "Participated in the autonomous AI-assisted robotic arm project.",
+                "sonel-yazilim-tasks-2": "Worked on image processing and AI model training.",
+                "sonel-yazilim-tasks-3": "Developed robot software for quality control of parts coming out of the plastic injection machine.",
+                "project-1-title": "UAV Ground Control Station",
+                "project-1-description": "Click for details.",
+                "project-2-title": "TÜBİTAK 2209-A Project",
+                "project-2-description": "Click for details.",
+                "project-3-title": "International UAV Competition – Rotary Wing",
+                "project-3-description": "Click for details.",
+                "project-4-title": "Fighting UAV Competition",
+                "project-4-description": "Click for details.",
+                "contact-title": "Contact",
+                "contact-text": "You can reach me through the following platforms:",
+                "email-label": "Email:",
+            }
+        };
+
+        document.getElementById("page-title").textContent = translations[lang]["page-title"];
+        document.getElementById("header-title").textContent = translations[lang]["header-title"];
+        document.getElementById("about-title").textContent = translations[lang]["about-title"];
+        document.getElementById("about-text").textContent = translations[lang]["about-text"];
+        document.getElementById("skills-title").textContent = translations[lang]["skills-title"];
+        document.getElementById("projects-title").textContent = translations[lang]["projects-title"];
+        document.getElementById("experience-title").textContent = translations[lang]["experience-title"];
+        document.getElementById("nurol-teknoloji-title").textContent = translations[lang]["nurol-teknoloji-title"];
+        document.getElementById("nurol-teknoloji-role").textContent = translations[lang]["nurol-teknoloji-role"];
+        document.getElementById("nurol-teknoloji-tasks-1").textContent = translations[lang]["nurol-teknoloji-tasks-1"];
+        document.getElementById("nurol-teknoloji-tasks-2").textContent = translations[lang]["nurol-teknoloji-tasks-2"];
+        document.getElementById("sonel-yazilim-title").textContent = translations[lang]["sonel-yazilim-title"];
+        document.getElementById("sonel-yazilim-role").textContent = translations[lang]["sonel-yazilim-role"];
+        document.getElementById("sonel-yazilim-tasks-1").textContent = translations[lang]["sonel-yazilim-tasks-1"];
+        document.getElementById("sonel-yazilim-tasks-2").textContent = translations[lang]["sonel-yazilim-tasks-2"];
+        document.getElementById("sonel-yazilim-tasks-3").textContent = translations[lang]["sonel-yazilim-tasks-3"];
+        document.getElementById("project-1-title").textContent = translations[lang]["project-1-title"];
+        document.getElementById("project-1-description").textContent = translations[lang]["project-1-description"];
+        document.getElementById("project-2-title").textContent = translations[lang]["project-2-title"];
+        document.getElementById("project-2-description").textContent = translations[lang]["project-2-description"];
+        document.getElementById("project-3-title").textContent = translations[lang]["project-3-title"];
+        document.getElementById("project-3-description").textContent = translations[lang]["project-3-description"];
+        document.getElementById("project-4-title").textContent = translations[lang]["project-4-title"];
+        document.getElementById("project-4-description").textContent = translations[lang]["project-4-description"];
+        document.getElementById("contact-title").textContent = translations[lang]["contact-title"];
+        document.getElementById("contact-text").textContent = translations[lang]["contact-text"];
+        document.getElementById("email-label").textContent = translations[lang]["email-label"];
+    }
+
+</script>
+</body>
+
+</html>
